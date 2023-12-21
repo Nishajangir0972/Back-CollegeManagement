@@ -8,6 +8,9 @@ UserName : {
     type : String,
     Required: true,
 },
+FatherName: String,
+MotherName: String,
+PhoneNo: String,
 Email : String,
 Password : String,
 

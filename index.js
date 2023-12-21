@@ -7,7 +7,7 @@ import StudentRecordRouter from "./StudentRecord/StudentRecordRouter.js";
 import EmployeeRecordRouter from "./EmployeeRecord/EmployeeRecordRouter.js";
 
 const app = express()
-const connection = mongoose.connect("mongodb://127.0.0.1:27017/Tagore")
+const connection = mongoose.connect("mongodb+srv://nishajangir9302:nisha0972@cluster0.wamladl.mongodb.net/?retryWrites=true&w=majority")
 app.use(cors())
 
 app.use(express.json())
