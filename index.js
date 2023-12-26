@@ -9,7 +9,7 @@ import EmployeeRecordRouter from "./EmployeeRecord/EmployeeRecordRouter.js";
 const app = express()
 const connection = mongoose.connect("mongodb+srv://nishajangir9302:nisha0972@cluster0.wamladl.mongodb.net/?retryWrites=true&w=majority")
 app.use(cors())
-
+app.use('/uploads', express.static('uploads'))
 app.use(express.json())
 app.use("/data" , StudentRouter)
 app.use("/admindata" , AdminRouter)

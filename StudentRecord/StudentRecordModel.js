@@ -3,22 +3,25 @@ import mongoose from "mongoose";
 const StudentRecordSchema = new mongoose.Schema({
     Firstname: String,
     Lastname: String,
-    Phone: String,
+    Dob: String,
     Fathername: String,
-    FatherPhoneno: String,
     Mothername: String,
-    MotherPhoneno :String,
+    Phone: String,
+    ParentNo: String,
+    Course: String,
+    Gender: String,
     LocalAddress: String,
-    PermanentAddress :String,
+    PermanentAddress: String,
+    Email: String,
     Photo: Object,
     Idproof: Object,
-    Dob: String,
-    Course: String,
     RegistrationDate: String,
-    Email: String,
+    City: String,
+    State: String,
+    PinCode: String
 
 })
 
 
-const StudentRecordModel = mongoose.model("StudentRecord" , StudentRecordSchema)
+const StudentRecordModel = mongoose.model("StudentRecord", StudentRecordSchema)
 export default StudentRecordModel

@@ -4,28 +4,25 @@ const EmployeeRecordSchema = new mongoose.Schema({
 
 Firstname : String,
 Lastname : String,
-Phone : Number,
+Dob : String,
 Fathername : String,
-FatherPhoneno :String,
 Mothername : String,
-MotherPhoneno : String,
-LocalAddress : String,
-PermanentAdress : String,
+Phoneno :String,
+Email : String,
+Qualification : String,
+Subject : String,
 Photo :Object,
 Idproof : Object,
-Dob : String,
-Quelification : String,
-Registration: String,
-Email : String,
-Designation : String,
+Signature : Object,
 Salary : String,
-Signation : String,
-Subject : String,
-Time : Number,
-Hours : Number,
-UserName : String,
-Password :String,
-Gender : String
+Designation : String,
+LocalAddress : String,
+PermanentAddress : String,
+City : String,
+State : String,
+PinCode : String,
+Time : String
+
 
 
 })

@@ -12,7 +12,7 @@ StudentRouter.post("/register", async (req, res) => {
 
 StudentRouter.post("/login", async (req, res) => {
     if (req.body.Username && req.body.Password) {
-        let Studentlogin = await StudentModel.findOne(req.body)
+        let Studentlogin = await StudentModel.findOne({ Username: req.body.Username, Password: req.body.Password})
         if (Studentlogin) {
             res.send(Studentlogin)
         }
