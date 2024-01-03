@@ -16,23 +16,44 @@ const storage = multer.diskStorage({
 const uploadPhoto = multer({ storage: storage });
 
 
-StudentRecordRouter.post("/StudentRecordadd", uploadPhoto.fields([
-    {name: 'Photo' , maxCount: 1},
-    {name: 'Idproof' , maxCount: 1},
-   
-]),  async (req, res) => {
-    const { Firstname, Lastname, Dob, Fathername, Mothername, Phone, Email, Course, RegistrationDate, LocalAddress, ParentNo ,PermanentAddress, City, State, PinCode, Gender } = req.body
-    const Photo = req.files.Photo;
-        const Idproof = req.files.Idproof;
-       
-   
-
-    let EmployeeRecord = new StudentRecordModel({ Firstname, Lastname, Dob, Fathername, Mothername, Phone, Email, Course, ParentNo, RegistrationDate, LocalAddress, PermanentAddress, City, State, PinCode ,Photo , Idproof,Gender })
-    let result = await EmployeeRecord.save()
-    res.json(result)
-console.log(result)
-
+StudentRecordRouter.get("/ShowStudentRecord", async (req, res) => {
+    let showData = await StudentRecordModel.find()
+    res.json(showData)
 })
+
+
+StudentRecordRouter.get("/ShowStudentRecord/:id", async (req, res) => {
+    let showData;
+    console.log(req.params.id);
+    try {
+        // console.log(id);
+         showData = await StudentRecordModel.findById(req.params.id)
+        console.log(showData);
+    } catch (error) {
+        console.log("error block ");
+    }
+    res.json(showData)
+})
+
+
+StudentRecordRouter.post("/StudentRecordadd", uploadPhoto.fields([
+    { name: 'Photo', maxCount: 1 },
+    { name: 'Idproof', maxCount: 1 },
+
+]),
+    async (req, res) => {
+        const { Firstname, Lastname, Dob, Fathername, Mothername, Phone, Email, Course, RegistrationDate, LocalAddress, ParentNo, PermanentAddress, City, State, PinCode, Gender } = req.body
+        const Photo = req.files.Photo;
+        const Idproof = req.files.Idproof;
+
+
+
+        let EmployeeRecord = new StudentRecordModel({ Firstname, Lastname, Dob, Fathername, Mothername, Phone, Email, Course, ParentNo, RegistrationDate, LocalAddress, PermanentAddress, City, State, PinCode, Photo, Idproof, Gender })
+        let result = await EmployeeRecord.save()
+        res.json(result)
+        // console.log(result)
+
+    })
 
 
 export default StudentRecordRouter
