@@ -22,6 +22,6 @@ app.use("/EmployeeRecord" , EmployeeRecordRouter)
 
 
 connection.then(()=>{
-app.listen( process.env.POST ||8000 , ()=> console.log("Server has been started"))
+app.listen( process.env.PORT ||8000 , ()=> console.log("Server has been started"))
 })
 .catch((err)=> console.log(err))
