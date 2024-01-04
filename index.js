@@ -1,3 +1,5 @@
+import dotenv from 'dotenv'
+dotenv.config()
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
@@ -7,7 +9,9 @@ import StudentRecordRouter from "./StudentRecord/StudentRecordRouter.js";
 import EmployeeRecordRouter from "./EmployeeRecord/EmployeeRecordRouter.js";
 
 const app = express()
-const connection = mongoose.connect("mongodb+srv://nishajangir9302:nisha0972@cluster0.wamladl.mongodb.net/?retryWrites=true&w=majority")
+
+
+const connection = mongoose.connect(process.env.MONGO_URL)
 app.use(cors())
 app.use('/uploads', express.static('uploads'))
 app.use(express.json())
@@ -18,6 +22,6 @@ app.use("/EmployeeRecord" , EmployeeRecordRouter)
 
 
 connection.then(()=>{
-app.listen(8000 , ()=> console.log("Server has been started"))
+app.listen( process.env.POST ||8000 , ()=> console.log("Server has been started"))
 })
 .catch((err)=> console.log(err))
