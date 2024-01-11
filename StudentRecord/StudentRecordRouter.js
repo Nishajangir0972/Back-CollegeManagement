@@ -18,17 +18,18 @@ const uploadPhoto = multer({ storage: storage });
 
 StudentRecordRouter.get("/ShowStudentRecord", async (req, res) => {
     let showData = await StudentRecordModel.find()
+    // console.log(showData);
     res.json(showData)
 })
 
 
 StudentRecordRouter.get("/ShowStudentRecord/:id", async (req, res) => {
     let showData;
-    console.log(req.params.id);
+    // console.log(req.params.id);
     try {
         // console.log(id);
          showData = await StudentRecordModel.findById(req.params.id)
-        console.log(showData);
+        // console.log(showData);
     } catch (error) {
         console.log("error block ");
     }
