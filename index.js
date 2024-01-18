@@ -9,6 +9,7 @@ import StudentRecordRouter from "./StudentRecord/StudentRecordRouter.js";
 import EmployeeRecordRouter from "./EmployeeRecord/EmployeeRecordRouter.js";
 import AdminNoticeRouter from './admin_notice/AdminNoticeRouter.js';
 import StudentComplaintRouter from './StudentComplain/StudentComplaintRouter.js';
+import AttendenceRouter from './Attendence/AttendenceRouter.js';
 
 const app = express()
 
@@ -23,6 +24,7 @@ app.use("/StdRecord" , StudentRecordRouter)
 app.use("/EmployeeRecord" , EmployeeRecordRouter)
 app.use("/AdminNotice" , AdminNoticeRouter)
 app.use("/Complaint" , StudentComplaintRouter)
+app.use("/AddAtd" ,  AttendenceRouter)
 
 
 connection.then(()=>{

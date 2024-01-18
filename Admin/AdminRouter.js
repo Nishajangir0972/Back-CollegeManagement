@@ -4,18 +4,11 @@ import bcrypt from "bcrypt"
 
 const AdminRouter = express.Router()
 
-AdminRouter.post("/Register", async (req, res) => {
-bcrypt.hash(password ,10 , async(err, hash)=>{
-    if(err){
-        console.log(err)
-    }
-    console.log(hash)
-    password = hash 
+AdminRouter.post("/Register", async (req, res) => { 
     let Admintoregister = new AdminModel(req.body)
     let result = await Admintoregister.save()
 
     res.json(result)
-})
    
 
 })
