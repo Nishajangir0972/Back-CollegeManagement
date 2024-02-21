@@ -49,8 +49,8 @@ StudentRecordRouter.post("/StudentRecordadd", uploadPhoto.fields([
 
 
 
-        let EmployeeRecord = new StudentRecordModel({ Firstname, Lastname, Dob, Fathername, Mothername, Phone, Email, Course, ParentNo, RegistrationDate, LocalAddress, PermanentAddress, City, State, PinCode, Photo, Idproof, Gender })
-        let result = await EmployeeRecord.save()
+        let StudentRecord = new StudentRecordModel({ Firstname, Lastname, Dob, Fathername, Mothername, Phone, Email, Course, ParentNo, RegistrationDate, LocalAddress, PermanentAddress, City, State, PinCode, Photo, Idproof, Gender })
+        let result = await StudentRecord.save()
         res.json(result)
         // console.log(result)
 

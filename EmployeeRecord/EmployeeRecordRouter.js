@@ -31,7 +31,7 @@ EmployeeRecordRouter.post("/EmployeeRecordadd", uploadPhoto.fields([
     const Signature = req.files.Signature;
 
 
-    let EmployeeRecord = new EmployeeRecordModel({ Firstname, Lastname, Dob, Fathername, Mothername, Phoneno, Email, Qualification, Subject, Salary, Designation, LocalAddress, PermanentAddress, City, State, PinCode, Time, Photo, Idproof, Signature })
+    let EmployeeRecord = new EmployeeRecordModel({ Firstname, Lastname, Dob, Fathername, Mothername, Phoneno, Email, Qualification, Subject, Salary, Designation, LocalAddress, PermanentAddress, City, State, PinCode, Time, Photo, Idproof, Signature, dataAdded: true })
     let result = await EmployeeRecord.save()
     res.json(result)
     // console.log(result)

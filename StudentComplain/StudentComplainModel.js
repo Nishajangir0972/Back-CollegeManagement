@@ -2,9 +2,9 @@ import mongoose from "mongoose";
 
 const StudentComplainSchema = new mongoose.Schema({
     Firstname : String,
-    Fathersname: String,
+    RollNo: String,
     Email: String,
-    MobileNo: Number,
+    MobileNo: String,
     Complaint: String
 
 })
