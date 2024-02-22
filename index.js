@@ -16,9 +16,7 @@ const app = express()
 
 
 const connection = mongoose.connect(process.env.MONGO_URL)
-app.use(cors({
-    origin: ["https://tagore-clg-three.vercel.app"]
-}))
+app.use(cors())
 
 app.use('/uploads', express.static('uploads'))
 app.use(express.json())
