@@ -1,6 +1,6 @@
 import express from "express";
 import AdminModel from "./AdminModel.js";
-import bcrypt from "bcrypt"
+
 
 const AdminRouter = express.Router()
 
